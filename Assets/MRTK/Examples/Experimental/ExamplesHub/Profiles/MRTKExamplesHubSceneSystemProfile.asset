@@ -38,7 +38,7 @@ MonoBehaviour:
     Tag: Untagged
     Asset: {fileID: 102900000, guid: 63a00118e809c754f9c7911bb85d635f, type: 3}
   - Name: HandInteractionExamples
-    Path: Assets/MRTK/Examples/Demos/HandTracking/Scenes/HandInteractionExamples.unity
+    Path: Assets/HandInteractionExamples.unity
     Included: 0
     BuildIndex: -1
     Tag: Untagged

@@ -6,11 +6,15 @@ public class EnvironmentPositionManager : MonoBehaviour
 {
 
     public GameObject camera;
-    public Vector3 defaultoffset = new Vector3(0,-0.3f,1.88f); 
+    public Vector3 defaultoffset = new Vector3(0,-0.4f,1.98f);
+    public KeyCode setPosition = KeyCode.Space;
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-       
+        if (Input.GetKeyDown(setPosition))
+        {
+            resetJetLocation();
+        }
 
     }
 
