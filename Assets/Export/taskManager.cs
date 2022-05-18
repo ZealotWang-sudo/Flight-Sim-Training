@@ -82,10 +82,11 @@ public class taskManager : MonoBehaviour
 
     private void saveResult()
     {
-        //string path = Application.persistentDataPath + "/test_result.txt";
-        string path = "Assets/test_result.txt";
+        string path = Application.dataPath + "/test_result.txt";
+        //string path = "Assets/test_result.txt";
         //Write some text to the test.txt file
-        StreamWriter writer = new StreamWriter(path, true);
+       
+        using StreamWriter writer = new StreamWriter(path, true);
         writer.WriteLine(Timer.text + " " + Mode.text + " " + scoreCounter.text + " " + mistakeCounter.text);
         writer.Close();
         StreamReader reader = new StreamReader(path);
