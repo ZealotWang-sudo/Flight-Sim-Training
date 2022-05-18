@@ -6,7 +6,7 @@ public class EnvironmentPositionManager : MonoBehaviour
 {
 
     public GameObject camera;
-    public Vector3 defaultoffset = new Vector3(0,-0.4f,1.98f);
+    public Vector3 defaultoffset = new Vector3(0, -0.4f, 1.98f);
     public KeyCode setPosition = KeyCode.Space;
     // Start is called before the first frame update
     void Update()
@@ -27,7 +27,7 @@ public class EnvironmentPositionManager : MonoBehaviour
     public void OnSliderUpdatedX(float eventData)
     {
         //transform.position -= new Vector3(eventData.NewValue, transform.position.y, transform.position.z);
-       // defaultoffset = new Vector3(eventData.NewValue, defaultoffset.y, defaultoffset.z);
+        // defaultoffset = new Vector3(eventData.NewValue, defaultoffset.y, defaultoffset.z);
         /* TargetRenderer = GetComponentInChildren<Renderer>();
          if ((TargetRenderer != null) && (TargetRenderer.material != null))
          {
@@ -35,11 +35,11 @@ public class EnvironmentPositionManager : MonoBehaviour
          }*/
     }
 
-  
+
     public void OnSliderUpdatedY(float eventData)
     {
         transform.position = new Vector3(transform.position.x, eventData + transform.position.y, transform.position.z);
-        defaultoffset = new Vector3(defaultoffset.x, eventData + defaultoffset.y , defaultoffset.z);
+        defaultoffset = new Vector3(defaultoffset.x, eventData + defaultoffset.y, defaultoffset.z);
     }
 
     public void OnSliderUpdateZ(float eventData)
