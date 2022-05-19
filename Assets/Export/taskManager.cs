@@ -13,6 +13,7 @@ public class taskManager : MonoBehaviour
     public TextMeshPro mistakeCounter;
     public TextMeshPro Timer;
     public TextMeshPro Mode;
+    public GameObject gameoverPlate;
 
 
     public GameObject[] buttons;
@@ -52,6 +53,8 @@ public class taskManager : MonoBehaviour
         TimerController.instance.BeginTimer();
         ScoreController.instance.reset();
         testGoing = true;
+        gameoverPlate.SetActive(false);
+
         StartCoroutine(updateButton());
     }
     private IEnumerator updateButton()
@@ -74,6 +77,7 @@ public class taskManager : MonoBehaviour
             buttons[i].GetComponent<Interactable>().IsEnabled = false;
         }
         saveResult();
+        gameoverPlate.SetActive(true);
         currentIndex = 0;
         // startButton.interactable = true;
         startButton.IsToggled = false;
@@ -85,7 +89,7 @@ public class taskManager : MonoBehaviour
         string path = Application.dataPath + "/test_result.txt";
         //string path = "Assets/test_result.txt";
         //Write some text to the test.txt file
-       
+
         using StreamWriter writer = new StreamWriter(path, true);
         writer.WriteLine(Timer.text + " " + Mode.text + " " + scoreCounter.text + " " + mistakeCounter.text);
         writer.Close();
